@@ -39,7 +39,7 @@ var popup = new mapboxgl.Popup({
 map.on('click', 'activite copy', function(e) { popuping(e); });
 map.on('click', 'culturel copy', function(e) { popuping(e); });
 map.on('click', 'naturel copy', function(e) { popuping(e); });
-map.on('click', 'poit-de-vue copy', function(e) { popuping(e); });
+map.on('click', 'poits-de-vue copy', function(e) { popuping(e); });
 map.on('click', 'Begnade copy', function(e) { popuping(e); });
 
 
@@ -52,8 +52,8 @@ map.on('mouseleave', 'culturel copy', function() { map.getCanvas().style.cursor 
 map.on('mouseenter', 'naturel copy', function() { map.getCanvas().style.cursor = 'pointer'; });
 map.on('mouseleave', 'naturel copy', function() { map.getCanvas().style.cursor = ''; });
 
-map.on('mouseenter', 'poit-de-vue copy', function() { map.getCanvas().style.cursor = 'pointer'; });
-map.on('mouseleave', 'poit-de-vue copy', function() { map.getCanvas().style.cursor = ''; });
+map.on('mouseenter', 'poits-de-vue copy', function() { map.getCanvas().style.cursor = 'pointer'; });
+map.on('mouseleave', 'poits-de-vue copy', function() { map.getCanvas().style.cursor = ''; });
 
 map.on('mouseenter', 'Begnade copy', function() { map.getCanvas().style.cursor = 'pointer'; });
 map.on('mouseleave', 'Begnade copy', function() { map.getCanvas().style.cursor = ''; });
