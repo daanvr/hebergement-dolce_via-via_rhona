@@ -36,37 +36,27 @@ var popup = new mapboxgl.Popup({
     closeOnClick: true
 });
 
-map.on('click', 'activite copy', function(e) {
-    popuping(e);
-});
-map.on('click', 'activite copy', function(e) {
-    popuping(e);
-});
-map.on('click', 'activite copy', function(e) {
-    popuping(e);
-});
-map.on('click', 'activite copy', function(e) {
-    popuping(e);
-});
-map.on('click', 'activite copy', function(e) {
-    popuping(e);
-});
-map.on('click', 'activite copy', function(e) {
-    popuping(e);
-});
-map.on('click', 'activite copy', function(e) {
-    popuping(e);
-});
+map.on('click', 'activite copy', function(e) { popuping(e); });
+map.on('click', 'culturel copy', function(e) { popuping(e); });
+map.on('click', 'naturel copy', function(e) { popuping(e); });
+map.on('click', 'poit-de-vue copy', function(e) { popuping(e); });
+map.on('click', 'Begnade copy', function(e) { popuping(e); });
 
 
+map.on('mouseenter', 'activite copy', function() { map.getCanvas().style.cursor = 'pointer'; });
+map.on('mouseleave', 'activite copy', function() { map.getCanvas().style.cursor = ''; });
 
-// map.on('mouseenter', 'activite copy', function() {
-//     map.getCanvas().style.cursor = 'pointer';
-// });
+map.on('mouseenter', 'culturel copy', function() { map.getCanvas().style.cursor = 'pointer'; });
+map.on('mouseleave', 'culturel copy', function() { map.getCanvas().style.cursor = ''; });
 
-// map.on('mouseleave', 'activite copy', function() {
-//     map.getCanvas().style.cursor = '';
-// });
+map.on('mouseenter', 'naturel copy', function() { map.getCanvas().style.cursor = 'pointer'; });
+map.on('mouseleave', 'naturel copy', function() { map.getCanvas().style.cursor = ''; });
+
+map.on('mouseenter', 'poit-de-vue copy', function() { map.getCanvas().style.cursor = 'pointer'; });
+map.on('mouseleave', 'poit-de-vue copy', function() { map.getCanvas().style.cursor = ''; });
+
+map.on('mouseenter', 'Begnade copy', function() { map.getCanvas().style.cursor = 'pointer'; });
+map.on('mouseleave', 'Begnade copy', function() { map.getCanvas().style.cursor = ''; });
 
 function popuping(e) {
     var coordinates = e.features[0].geometry.coordinates.slice();
@@ -74,22 +64,10 @@ function popuping(e) {
     var type = e.features[0].properties.Catégorie;
     var info = e.features[0].properties.Info;
 
-    // Ensure that if the map is zoomed out such that multiple
-    // copies of the feature are visible, the popup appears
-    // over the copy being pointed to.
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    }
-
-    // Populate the popup and set its coordinates
-    // based on the feature found.
-    popup.setLngLat(coordinates)
+    popup.setLngLat(coordinates)  // Populate the popup and set its coordinates based on the feature found.
         .setHTML("<p class='popuptitle'><b>" + name + "</b></p><p class='popuptype'>" + "</p><p class='popupinfo'>" + info + "<p>")
         .addTo(map);
 };
-
-
-
 </script>
 
 </body>
